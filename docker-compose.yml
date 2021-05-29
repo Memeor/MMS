@@ -2,10 +2,10 @@ version: '2'
 
 services:
   app:
-    image: 'memeorg:latest'
+    image: 'supernovabirth/memeor:latest'
     build:
       context: .
-    container_name: memeorg-app
+    container_name: memeor-app
     ports:
       - 8080:8080
     depends_on:
