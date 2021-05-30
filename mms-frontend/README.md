@@ -19,3 +19,4 @@ On mac or linux:
 
 
 If you want to learn how I setup the docker for react, here is the amazing tutorial: https://www.youtube.com/watch?v=3xDAU5cvi5E 
+
