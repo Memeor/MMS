@@ -1,9 +1,11 @@
 This is the frontend section of MMS app.
 
 
-Without docker:
+
 You can start the react project without docker on your device with the following command:
+
 npm install 
+
 npm start
 
 
