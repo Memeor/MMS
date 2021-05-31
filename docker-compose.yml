@@ -4,10 +4,10 @@ services:
   app:
     image: 'supernovabirth/memeor:latest'
     container_name: memeor-app
+    ports:
+      - "8080:8080"
     expose:
       - 8080
-    networks:
-      - main
     depends_on:
       - db
     environment:
@@ -21,8 +21,6 @@ services:
     container_name: db
     ports:
       - "5432:5432"
-    networks:
-      - main
     environment:
       - POSTGRES_DB=mms_db
       - POSTGRES_USER=mms-postgres
@@ -33,6 +31,3 @@ services:
 volumes:
   memeor-data:
     driver: local
-
-networks:
-  main:
