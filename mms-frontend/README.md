@@ -18,6 +18,9 @@ On windows:
 On mac or linux:
 1. type the following command:
  docker-compose up -d
+ 
+ 
+Your react application will run in port 3000 which you can view in broweser with: localhost:3000
 
 
 If you want to learn how I setup the docker for react, here is the amazing tutorial: https://www.youtube.com/watch?v=3xDAU5cvi5E 
