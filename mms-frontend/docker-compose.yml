@@ -1,0 +1,13 @@
+version: "3"
+services:
+  react-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    # environment:
+    #   -CHOKIDAR_USEPOLLING=true
+    #note: remove the commented enviornment variable(above two lines) if you are using windows to setup the docker
+    
+
