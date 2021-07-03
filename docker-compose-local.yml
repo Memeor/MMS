@@ -1,10 +1,25 @@
 version: '2'
 
 services:
+  web:
+    build:
+      context: .
+      target: react
+  
+  nginx:
+    build:
+      context: .
+      target: nginx
+    image: 'memeor-web:latest'
+    container_name: memeor-web
+    ports:
+      - "8000:80"
+    
   app:
     image: 'memeor:latest'
     build:
       context: .
+      target: spring-boot
     container_name: memeor-app
     ports:
       - 8080:8080

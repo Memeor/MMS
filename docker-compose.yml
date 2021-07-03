@@ -1,7 +1,24 @@
 version: '2'
 
 services:
+  web:
+    build:
+      context: .
+      target: react
+  
+  nginx:
+    build:
+      context: .
+      target: nginx
+    image: 'supernovabirth/memeor-web:latest'
+    container_name: memeor-web
+    ports:
+      - "8000:80"
+      
   app:
+    build:
+      context: .
+      target: spring-boot
     image: 'supernovabirth/memeor:latest'
     container_name: memeor-app
     ports:
@@ -15,7 +32,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=mms-postgres
       - SPRING_DATASOURCE_PASSWORD=mms-postgres-password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-          
+
   db:
     image: 'postgres:13.1-alpine'
     container_name: db
