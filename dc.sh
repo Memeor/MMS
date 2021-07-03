@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Stopping and starting docker containers"
 sudo docker-compose down
+sudo docker rmi supernovabirth/memeor-web
 sudo docker rmi supernovabirth/memeor
 sudo docker rmi postgres
 echo "Starting DB"
