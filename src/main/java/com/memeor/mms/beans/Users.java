@@ -1,10 +1,10 @@
-package login;
+package com.memeor.mms.beans;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class Users {
 	@Id
 	private int id;
 	private String username;
