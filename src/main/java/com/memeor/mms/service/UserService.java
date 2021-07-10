@@ -2,21 +2,19 @@ package com.memeor.mms.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.memeor.mms.beans.User;
+import com.memeor.mms.beans.UserRegistrationResponse;
 
-import com.memeor.mms.beans.Users;
-import com.memeor.mms.repository.UserRepository;
+public interface UserService {
 
-@Service
-public class UserService {
+	public List<User> getAllUsers();
+
+	public UserRegistrationResponse saveUser(User user);
 	
-	@Autowired
-	UserRepository userRepository;
-	
-	public List<Users> getAllUsers(){
-		
-		return userRepository.findAll();
-	}
+	public void updateUser(User user);
+
+	public boolean checkIfUserExists(String username);
+
+	boolean checkIfEmailAlreadyRegistered(String emailAddress);
 
 }
