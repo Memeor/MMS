@@ -24,4 +24,3 @@ INSERT INTO mms_user(username, password, email_address) VALUES('losangeles', '39
 INSERT INTO mms_user(username, password, email_address) VALUES('newyork', '855000xyz0', 'ny@europe.eu');
 INSERT INTO mms_user(username, password, email_address) VALUES('edinburgh', '464000xyz', 'edinburgh@europe.eu');
 INSERT INTO mms_user(username, password, email_address) VALUES('berlin', '671000xyz', 'berlin@europe.eu');
-SELECT setval('mms_user_id_seq', (SELECT MAX(id) from "test"));
