@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Paper, Typography, Button, TextField } from '@material-ui/core'
 import validator from 'validator';
+import axios from 'axios';
 
 export class UserSignup extends Component {
     constructor(props) {
@@ -84,6 +85,18 @@ export class UserSignup extends Component {
 
     submitfunction = () => {
         //var valid = this.handleValidation();
+        const userObject = {
+            username: this.state.username,
+            emailAddress: this.state.email,
+            password: this.state.password
+        }
+        axios.post('/user/', userObject)
+            .then((res) => {
+                console.log(res);
+            }).catch((error) => {
+                console.log(error)
+            });
+        this.setState({ username: '', email: '', password: '' })
         console.log(this.state)
     }
 
@@ -107,7 +120,7 @@ export class UserSignup extends Component {
                                         type="text"
                                         fullWidth
                                         label="Username*"
-                                        name="name1"
+                                        name="username"
                                         value={this.state.username}
 
                                         placeholder="Choose a username"
