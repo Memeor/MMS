@@ -12,16 +12,11 @@ export class AppInstall extends Component {
             email:"",
             phone:"",
             description:"",
-            password:"",
-            confirmPassword:"",
             valid:false,
             error:{
                 emailError:false,
                 eamilErrorDesc:"Email*",
-                passwordError:false,
-                passwordErrorDesc:"",
-                confirmPasswordError:false,
-                confirmPasswordErrorDesc:""
+               
             }
             
         };
@@ -53,41 +48,7 @@ export class AppInstall extends Component {
             }
 
         }
-        else if(e.target.name === "password")
-        {
-            
-            if(validator.isLength(e.target.value, 8, 15) && validator.isStrongPassword(e.target.value))
-            {
-                errors["passwordErrorDesc"]="";
-                errors["passwordError"]=false;
-                this.setState({error:errors})
-
-            }
-            else
-            {
-                errors["passwordErrorDesc"]="Password should be the combination of atleast 1 lowercase letter, 1 uppercase letter, 1 number and 1 symbol and has length of atleast 8-15 characters.";
-                errors["passwordError"] = true;
-                this.setState({error:errors})
-
-            }
-        }
-        else if(e.target.name === "confirmPassword")
-        {
-            if(validator.equals(e.target.value, this.state.password))
-            {
-                errors["confirmPasswordErrorDesc"]="";
-                errors["confirmPasswordError"]=false;
-                this.setState({error:errors})
-
-            }
-            else
-            {
-                errors["confirmPasswordErrorDesc"]="Password didn't match";
-                errors["confirmPasswordError"] = true;
-                this.setState({error:errors})
-
-            }
-        }
+       
         this.setState({
             valid: !(this.state.error.emailError || this.state.error.passwordError || this.state.error.confirmPasswordError || !validator.isLength(this.state.name1, 1,50) || !validator.isLength(this.state.address, 1, 200) || ! validator.isLength(this.state.description, 1, 10000))
         });
@@ -172,40 +133,9 @@ export class AppInstall extends Component {
                         />
                       
                     </div>
-                    <div>
+                 
                         
-                    <TextField
-                        label="Password*"
-                        name="password"
-                        //id="standard-basic"
-                        type ="password"
-                        error={this.state.error.passwordError}
-                        placeholder="Enter a strong password"
-                        onChange={e => this.change(e)}
-
-                        />
-                       
-                        </div>
-                        
-                    <div>
-                        <Typography variant='caption'>{this.state.error.passwordErrorDesc}</Typography>
-                      
-                    </div>
-                    
-
-                    <div>
-                    <TextField
-                        label="Confirm Password*"
-                        name="confirmPassword"
-                        //id="standard-basic"
-                        type ="password"
-                        error={this.state.error.confirmPasswordError}
-                        placeholder="Enter a strong password"
-                        onChange={e => this.change(e)}
-
-                        />
-                      
-                    </div>
+                   
                     <div>
                         <Typography variant='caption'>{this.state.error.confirmPasswordErrorDesc}</Typography>
                       
