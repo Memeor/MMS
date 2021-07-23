@@ -36,3 +36,5 @@ CREATE TABLE organizations (
 	created_ts TIMESTAMP WITH TIME ZONE,
 	updated_ts TIMESTAMP WITH TIME ZONE
 );
+
+INSERT INTO organizations(name, address, email, ph_number, description) VALUES('Fitness Nation Gym', '512 Lamar Blvd', 'fitness@gmail.com', '68226679**', 'It is the best gym in Arlington');
