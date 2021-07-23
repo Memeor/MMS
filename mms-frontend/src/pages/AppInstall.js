@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Grid,Paper,Typography,Button, TextField } from '@material-ui/core'
 import validator from 'validator';
+import axios from 'axios';
 
 export class AppInstall extends Component {
     constructor(props) {
@@ -61,6 +62,20 @@ export class AppInstall extends Component {
     submitfunction=()=>
     {
         //var valid = this.handleValidation();
+        const orgObject = {
+            orgName: this.state.name1,
+            address: this.state.address,
+            email: this.state.email,
+            phone_no: this.state.phone,
+            description: this.state.description
+        }
+        axios.post('/org/', orgObject)
+            .then((res) => {
+                console.log(res);
+            }).catch((error) => {
+                console.log(error)
+            });
+        //this.setState({ username: '', email: '', password: '' })
         console.log(this.state)
     }
     
