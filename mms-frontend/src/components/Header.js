@@ -86,6 +86,11 @@ export default function Header() {
                                 }>Sign Up</MenuItem>
                                 <MenuItem onClick={
                                     () => {
+                                        history.push("/Login")
+                                    }
+                                }>Log In</MenuItem>
+                                <MenuItem onClick={
+                                    () => {
                                         history.push("/install")
                                     }
                                 }>Set Up</MenuItem>

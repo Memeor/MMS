@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import UserSignup from './pages/UserSignup';
 import Header from './components/Header';
 import React from 'react';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="/install" component={AppInstall} />
           <Route path="/user-signup" component={UserSignup} />
+          <Route path="/Login" component={Login} />
         </Switch>
       </Router>
     </React.Fragment>
